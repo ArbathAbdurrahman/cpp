@@ -39,3 +39,9 @@ unsigned int variable; // hanya menerima angka positif
 
 ## Input Output
 Untuk input kita bisa menggunakan `std::cin` sedangkan untuk output kita bisa menggunakan `std::cout`
+
+## Operator
+## Function
+## Struktur Data
+## Conditional
+## Looping
