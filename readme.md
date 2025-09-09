@@ -219,6 +219,15 @@ Ini bisa digunakan untuk menggantikan multiple line code dengan single line dan 
 ### Switch
 switch digunakan untuk menentukan jika banyak alternative block kode yang bisa dieksekusi 
 ```cpp
-
+switch(expression) {
+  case x:
+    // code block
+    break;
+  case y:
+    // code block
+    break;
+  default:
+    // code block
+}
 ```
 ## Looping
