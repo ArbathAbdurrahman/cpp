@@ -186,6 +186,128 @@ int main() {
 }
 ```
 
+### Function Overloading
+Fungsi dalam c++ memungkinkan untuk memiliki nama yang sama, selama parameternya berbeda dalam tipe atau number
+
+contoh:
+```cpp
+int myFunction(int x)
+float myFunction(float x)
+double myFunction(double x, double y)
+```
+
+kalau tidak menggunakan overloading jadi seperti ini:
+```cpp
+int plusFuncInt(int x, int y) {
+  return x + y;
+}
+
+double plusFuncDouble(double x, double y) {
+  return x + y;
+}
+
+int main() {
+  int myNum1 = plusFuncInt(8, 5);
+  double myNum2 = plusFuncDouble(4.3, 6.26);
+
+  cout << "Int: " << myNum1 << "\n";
+  cout << "Double: " << myNum2;
+  return 0;
+}
+```
+kita jadi membuat dua fungsi dengan nama yang berbeda padahal logicnya sama
+
+contoh penggunaan function overloading contohnya misal pada fungsi increment yang berkerja di int dan double:
+```cpp
+int plusFunc(int x, int y) {
+  return x + y;
+}
+
+double plusFunc(double x, double y) {
+  return x + y;
+}
+
+int main() {
+  int myNum1 = plusFunc(8, 5);
+  double myNum2 = plusFunc(4.3, 6.26);
+
+  cout << "Int: " << myNum1 << "\n";
+  cout << "Double: " << myNum2;
+  return 0;
+}
+```
+
+### Variable Scope
+setelah memahami cara fungsi bekerja, penting juga mempelajari bagaimana variable bertindak di dalam dan di luar fungsi
+
+di C++, variable hanya bisa diakses di dalam wilayah dimana dia dibuat. Hal ini disebut scope.
+
+#### Local scope  
+variable yang dibuat di dalam fungsi adalah milik lingkup lokal dari fungsi tersebut, dan hanya bisa digunakan di dalam fungsi tersebut.
+contoh:
+```cpp
+void myFunction() {
+  // Local variable that belongs to myFunction
+  int x = 5;
+
+  // Print the variable x
+  cout << x;
+}
+
+int main() {
+  myFunction();
+  return 0;
+}
+```
+jadi variable x hanya bisa digunakan di dalam body myFunction dan tidak bisa diakses di main maupun di luar fungsi tersebut
+
+#### Global scope
+variable yang dibuat di luar fungsi dissebut global variable dan dimiliki oleh global scope. Global variable bisa diakses di dalam dan di luar fungsi selama variable dideklarasikan di luar fungsi.  
+contoh:
+```cpp
+// Global variable x
+int x = 5;
+
+void myFunction() {
+  // We can use x here
+  cout << x << "\n";
+}
+
+int main() {
+  myFunction();
+
+  // We can also use x here
+  cout << x;
+  return 0;
+}
+```
+
+#### Naming variables
+jika terdapat variable dengan nama yang sama di dalam dan di luar fungsi. C++ akan menganggap itu sebagai 2 variable yang berbeda.  
+contoh:
+```cpp
+// Global variable x
+int x = 5;
+
+void myFunction() {
+  // Local variable with the same name as the global variable (x)
+  int x = 22;
+  cout << x << "\n"; // Refers to the local variable x
+}
+
+int main() {
+  myFunction();
+
+  cout << x; // Refers to the global variable x
+  return 0;
+}
+```
+
+jadi jika di dalam fungsi terdapat variable yang sama dengan variable di global, maka fungsi akan memprioritaskan fungsi yang di dalam fungsi/local variable dulu.
+
+tapi penulisan nama variable yang sama itu harus dihindari karena itu bisa membuat code menjadi error atau bug yang sukar disadari.
+
+
 ## Struktur Data
 ## [Conditional](condition/)
 conditional adalah statement yang yang digunakan untuk melakukan tindakan yang berbeda berdasarkan kondisi yang diberikan
