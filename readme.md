@@ -49,21 +49,21 @@ Operator aritmatika yang bisa digunakan adalah
 - modulus (%)
 - increment (++var)
 - decrement (--var)
-## Function
+## [Function](function/)
 fungsi adalah blok kode yang berjalan hanya ketika dipanggil.
 kamu bisa melemparkan data yang disebut parameter ke dalam fungsi.
 
 fungsi juga digunakan untuk melakukan beberapa aksi, dan fungsi-fungsi ini penting untuk penggunaan kembali/reusing code:  
 buat 1 fungsi dan gunakan berkali-kali
 
-### Membuat fungsi  
+### [Membuat fungsi](function/membuatFunction.cpp)  
 ```cpp
 void myFunction() {
   // code to be executed
 }
 ```
 
-### Memanggil fungsi  
+### [Memanggil fungsi](function/membuatFunction.cpp)  
 mendeklarasikan fungsi tidak akan langung mengeksekusi fungsi tersebut
 
 untuk memanggil fungsi, tulis nama fungsi diikuti dengan dua kurung () dan semicolon ;
@@ -82,7 +82,7 @@ int main() {
 // Outputs "I just got executed!"
 ```
 
-### Parameter dan Arguments
+### [Parameter dan Arguments](function/parameterDanArgumen.cpp)
 informasi/data dapat dilemparkan/diteruskan ke fungsi dengan parameter. Parameter berfungsi sebagai variable di dalam fungsi;
 
 parameter ditulis setelah nama fungsi, di dalam kurung (). Parameter dapat berjumlah lebih dari 1 dengan dipisahkan koma ,
@@ -99,7 +99,7 @@ int main() {
     functionName(parameter1, paramter2, parameter3);
 }
 ```
-### Default Parameter
+### [Default Parameter](function/defaultParameter.cpp)
 Default parameter adalah paramter yang disertai dengan nilai default.
 
 penggunaanya yaitu dengan menggunakan equals sign (=). Contoh jika kita memanggil fungsi tanpa argument, parameter akan menggunakan default value ("Norway);
@@ -123,7 +123,7 @@ int main() {
 // USA
 ```
 
-### Multiple Parameters
+### [Multiple Parameters](function/multipleParameter.cpp)
 Di dalam fungsi, kamu bisa menambahkan parameter sesukamu, contoh:
 
 ```cpp
@@ -142,7 +142,7 @@ int main() {
 // Jenny Refsnes. 14 years old.
 // Anja Refsnes. 30 years old.
 ```
-### Return Value
+### [Return Value](function/returnValue.cpp)
 fungsi yang baik seharusnya mengembalikan value, tipe value ditulis di awal fungsi. sebelumnya sebelum menulis fungsi menggunakan keyword void, void menandakan fungsi tersebut tidak mengembalikan sebuah nilai. Jika sebuah fungsi ingin mengembalikan nilai maka sebelum nama fungsi tuliskan tipe data yang akan dikembalikan seperti string, int, dll.
 
 ```cpp
@@ -157,7 +157,7 @@ int main() {
 
 // Outputs 8 (5 + 3)
 ```
-### Pass By Reference
+### [Pass By Reference](function/passByReference.cpp)
 di contoh yang sebelumnya, kita menggunakan normal variable ketika kita melempar paramter ke fungsi
 
 kamu juga bisa melempar sebuah reference ke fungsi.
@@ -173,8 +173,21 @@ jadi food dan meal bernilai sama karena meal adalah alias dari food
 
 jadi cara ini akan berguna jika kamu butuh untuk mengubah value dari argument
 
+```cpp
+void changeValue(int &num) {
+  num = 50;
+}
+
+int main() {
+  int value = 10;
+  changeValue(value);  // Call the function and change the value to 50
+  cout << value; 
+  return 0;
+}
+```
+
 ## Struktur Data
-## Conditional
+## [Conditional](condition/)
 conditional adalah statement yang yang digunakan untuk melakukan tindakan yang berbeda berdasarkan kondisi yang diberikan
 
 kondisi yang digunakan adalah kondisi perbandingan
@@ -188,7 +201,7 @@ kondisi yang digunakan adalah kondisi perbandingan
 kondisi perbandingan ini digunakan untuk melakukan aksi yang berbeda
 
 c++ punya conditional statements:
-### If
+### [If](condition/if.cpp)
 if untuk menentukan blok kode yang akan dieksekusi jika kondisi true
 
 ```cpp
@@ -196,7 +209,7 @@ if (condition) {
   // block of code to be executed if the condition is true
 }
 ```
-### Else
+### [Else](condition/else.cpp)
 else untuk menentukan blok kode yang dieksekuis jika kondisi false
 ```cpp
 if (condition) {
@@ -205,7 +218,7 @@ if (condition) {
   // block of code to be executed if the condition is false
 }
 ```
-### Else if
+### [Else if](condition/elseIf.cpp)
 else if untuk menentukan kondisi baru untuk mengetes, jika kondisi pertama false
 ```cpp
 if (condition1) {
@@ -216,7 +229,7 @@ if (condition1) {
   // block of code to be executed if the condition1 is false and condition2 is false
 }
 ```
-### Short hand if else
+### [Short hand if else](condition/shortIfElse.cpp)
 Ada if else yang lebih singkat yang dinamakan ternary operator, dinamakan ternary operator karena ini mengandung tiga operand.  
 Ini bisa digunakan untuk menggantikan multiple line code dengan single line dan biasanya digunakan untuk replace simple if else statement
 
@@ -224,7 +237,7 @@ Ini bisa digunakan untuk menggantikan multiple line code dengan single line dan 
  variable = (condition) ? expressionTrue : expressionFalse;
 ```
 
-### Switch
+### [Switch](condition/switch.cpp)
 switch digunakan untuk menentukan jika banyak alternative block kode yang bisa dieksekusi 
 ```cpp
 switch(expression) {
