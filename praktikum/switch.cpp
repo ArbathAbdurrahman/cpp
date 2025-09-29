@@ -7,7 +7,6 @@ int main(){
     switch(n) {
         case 5 :
         cout << "Negatif" << endl;
-        break;
 
         case 1:
         cout << n << endl;
@@ -16,4 +15,5 @@ int main(){
         default:
         cout << "Tidak ada pilihan." << endl;
     }
+    
 }

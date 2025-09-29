@@ -33,6 +33,8 @@ int main() {
         } else{
             cout << a/b << endl;
         }
+        // kalau pakai ternary 
+        // b == 0? : cout << a/b <<endl;
         break;
 
         default :
